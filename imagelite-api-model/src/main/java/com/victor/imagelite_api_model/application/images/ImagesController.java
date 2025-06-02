@@ -42,7 +42,7 @@ public class ImagesController {
 
     private URI buildImageURL(Image image) {
         String imagePath = "/" + image.getId();
-        ServletUriComponentsBuilder
+        return ServletUriComponentsBuilder
                 .fromCurrentRequest()
                 .path(imagePath)
                 .build().toUri();
