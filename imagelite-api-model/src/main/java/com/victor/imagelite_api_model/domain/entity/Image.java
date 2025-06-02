@@ -1,5 +1,6 @@
 package com.victor.imagelite_api_model.domain.entity;
 
+import com.victor.imagelite_api_model.domain.enums.ImageExtension;
 import jakarta.persistence.*;
 import org.springframework.data.annotation.CreatedDate;
 
