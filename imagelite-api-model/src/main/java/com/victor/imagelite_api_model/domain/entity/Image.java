@@ -3,17 +3,18 @@ package com.victor.imagelite_api_model.domain.entity;
 import com.victor.imagelite_api_model.domain.enums.ImageExtension;
 import jakarta.persistence.*;
 import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.time.LocalDateTime;
 
 @Entity
 @Table
+@EntityListeners(AuditingEntityListener.class)
 public class Image {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
-
     @Column
     private String name;
     @Column
