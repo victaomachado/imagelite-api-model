@@ -1,5 +1,6 @@
 package com.victor.imagelite_api_model.application.images;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,6 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/v1/images")
+@Slf4j
 public class ImagesController {
 
     @PostMapping
@@ -19,7 +21,9 @@ public class ImagesController {
             @RequestParam("name") String name,
             @RequestParam("tags") List<String> tags
             ) {
-        
+        log.info("Imagem recebida: name: {}, size: {}", file.getName(), file.getSize());
+        log.info("Nome definido para a imagem: {}", name);
+        log.info("Tags: {}", tags);
         return ResponseEntity.ok().build();
     }
 }
